@@ -1,0 +1,35 @@
+:root{--bg:#f8fafc;--card:#fff;--tx:#0f172a;--mu:#64748b;--bd:#e2e8f0;--ac:#b45309;--red:#dc2626;--amb:#d97706;--grn:#059669;--gry:#94a3b8}
+@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mu:#94a3b8;--bd:#334155;--ac:#f59e0b}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+.top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:5}
+.brand b{display:block;font-size:17px}.brand small{color:var(--mu)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+button,.btn{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 12px;border-radius:8px}
+button:hover{border-color:var(--ac)}button.on,button.pri{background:var(--ac);color:#fff;border-color:var(--ac)}
+button.dan{color:var(--red)}
+main{max-width:1100px;margin:0 auto;padding:20px}
+h2{margin:0 0 14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;text-align:left}
+.kpi b{display:block;font-size:26px}.kpi span{color:var(--mu);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.bar input[type=search]{flex:1;min-width:200px}
+input,select,textarea{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx)}
+label{display:block;font-size:13px;color:var(--mu);margin-bottom:10px}label input,label select,label textarea{margin-top:3px;color:var(--tx)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:16px}.mu{color:var(--mu);font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:99px;border:1px solid var(--bd);font-size:12px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--gry)}
+.OVERDUE .dot{background:var(--red)}.DUE_SOON .dot{background:var(--amb)}.ON_TIME .dot{background:var(--grn)}
+.OVERDUE.badge{color:var(--red);border-color:var(--red)}.DUE_SOON.badge{color:var(--amb);border-color:var(--amb)}.ON_TIME.badge{color:var(--grn);border-color:var(--grn)}
+.form{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 14px}
+.overlay{position:fixed;inset:0;background:#0008;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:20px;z-index:10}
+.overlay[hidden],.toast[hidden]{display:none}
+.modal{background:var(--card);border-radius:14px;padding:20px;width:100%;max-width:640px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:10px;z-index:20}
+.receipt{background:#fff;color:#000;padding:20px;border:1px dashed #999;font-family:Georgia,serif}
+.receipt h3,.receipt p{margin:4px 0}.receipt hr{border:0;border-top:1px solid #000;margin:10px 0}
+@media print{body *{visibility:hidden}.receipt,.receipt *{visibility:visible}.receipt{position:absolute;left:0;top:0;width:100%;border:0}}
